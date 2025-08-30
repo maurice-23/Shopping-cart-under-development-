@@ -5,7 +5,7 @@ form.addEventListener("submit", function(event){
     const num2 = document.getElementById('num2').value
     let finalResult
     const operator = document.getElementById('operator').value
-
+    //switching between operators
     switch (operator) {
         case "times":
             finalResult = num1 * num2;
