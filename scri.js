@@ -25,7 +25,11 @@ form.addEventListener("submit", function(event){
             finalResult = "Something went wrong pleas try again!";
             break;
     }
-
-    document.getElementById('resultSpace').innerHTML = `${num1} ${operator} ${num2} = ${finalResult}`;
+    if (!isNaN(finalResult)) {
+        
+        document.getElementById('resultSpace').innerHTML = `${num1} ${operator} ${num2} = ${finalResult}`;
+    }else{
+        document.getElementById('resultSpace').innerHTML = "Please choose oparator";
+    }
 
 })
