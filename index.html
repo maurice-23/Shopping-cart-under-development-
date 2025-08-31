@@ -4,20 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testing time</title>
+    <style>
+        form input{
+            height: 30px;
+            width:52px;
+            border-radius: 5px;
+            border: none;
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+            outline: none;
+            background: #fdfdfd;
+            padding: 0 10px;
+            margin: 0 10px;
+        }
+        form .num2{
+            border-left: 1px solid transparent;
+            border-right: 1px solid black;
+
+        }
+        form select{
+            height: 35px;
+            padding: 0 20px;
+            border: none;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            outline: none;
+        }
+        #submit{
+            width: 80px;
+            background: #194f59;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.377);
+        }
+        h1{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #194f59;
+            margin: 20px 0;
+        }
+        form{
+            text-align: center;
+            margin-top: 100px;
+        }
+        #resultSpace{
+            margin-top: 20px;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #194f59;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <h1>Two numbers calculator</h1>
 
     <form action="" method="get" id="form">
-        <input type="number" id="num1" required> 
+        <input type="number" id="num1" required placeholder="num 1 .."> 
         <select name="" id="operator" required>
             <option selected hidden>Select operator</option>
-            <option value="times">X</option>
-            <option value="plus">+</option>
-            <option value="minus">-</option>
-            <option value="divide">/</option>
+            <option value="times">Multiply(x)</option>
+            <option value="plus">Plus(+)</option>
+            <option value="minus">Minus(-)</option>
+            <option value="divide">Divide(/)</option>
         </select>
-        <input type="number" id="num2" required>
+        <input type="number" id="num2" required placeholder="num 2 .." class="num2">
         <input type="submit" value="Result" id="submit">
         <div id="resultSpace"></div>
     </form>
