@@ -4,6 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guessing game</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            gap: 10px;
+        }
+
+        form input, form button{
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 200px;
+            text-align: center;
+            outline: none;
+        }
+        form button{
+            background-color: #4CAF50;
+            color: white;
+            width: 220px;
+            cursor: pointer;
+        }
+        form button:hover{
+            background-color: #45a049;
+        }
+        form h1{
+            margin-bottom: 20px;
+            color: #45a049;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        form p{
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        form p#times{
+            color: #4CAF50;
+        }
+    </style>
 </head>
 <body>
     <form action="" id="form">
