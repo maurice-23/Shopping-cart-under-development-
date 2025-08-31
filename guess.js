@@ -8,7 +8,7 @@ guessForm.addEventListener("submit",function(event){
     if (guess == randomNumber) {
         document.getElementById('result').innerHTML = `You did it the number is ${randomNumber} ✅`;
         if (guessCount <= 5) {
-            document.getElementById('times').innerHTML = `Wooooow did it in just ${guessCount} times. 🥇(Gold medal)`;
+            document.getElementById('times').innerHTML = `Wooooow did it in just ${guessCount} time(s). 🥇(Gold medal)`;
         }else if(guessCount <= 10){
             document.getElementById('times').innerHTML = `You hit only ${guessCount} times. 🥈 (Silver medal)`;
         }else{
@@ -17,6 +17,7 @@ guessForm.addEventListener("submit",function(event){
         guessCount = 1;
         
     }else{
+        
         document.getElementById('result').innerHTML = `Retry number was ${randomNumber}. better lucky next time..`;
         guessCount ++;
         document.getElementById('times').innerHTML = " ";
