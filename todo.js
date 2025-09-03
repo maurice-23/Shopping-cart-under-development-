@@ -1,9 +1,8 @@
 let taskArray = [];
-let taskCount = 0;
 
 document.getElementById('form').addEventListener("submit", function(event){
     event.preventDefault();
-    taskCount++;
+ 
     let taskValue = document.getElementById("taskContent").value;
     taskArray[taskArray.length] = taskValue;
     console.log(taskArray.length);
