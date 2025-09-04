@@ -1,5 +1,4 @@
 let taskArray = [];
-
 document.getElementById('form').addEventListener("submit", function(event){
     event.preventDefault();
  
@@ -19,7 +18,6 @@ function renderTask(){
     }
 
 }
-
 function deleteItem(i){
     taskArray.splice(i,1);
     renderTask();
