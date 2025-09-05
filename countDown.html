@@ -4,19 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Counter</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif;
+        }
+        form button{
+            height: 30px;
+            width: 40px;
+            margin: 2px 0;
+            
+        }
+        #submitBtn{
+            width: 128px;
+            height: 40px;
+            margin: 3px 0;
+        }
+    </style>
 </head>
 <body>
     <form action="">
         <h1>
-            <span id="hrs">00h</span>:<span id="min">00m:</span><span id="sec">00s</span>
+            <span id="hrs">00h</span>:<span id="mins">00m:</span><span id="secs">00s</span>
         </h1>
         <div class="keyBoard">
-            <button id="number1" value="Helllll motherfuckeer" >Click</button>
+            <div>
+                <button id="number1" value="1" >1</button>
+                <button id="number" value="2" >2</button>
+                <button id="number" value="3" >3</button>
+            </div>
+            <div>
+                <button id="number4" value="4" >4</button>
+                <button id="number5" value="5" >5</button>
+                <button id="number6" value="6" >6</button>
+            </div>
+            <div>
+                <button id="number7" value="7" >7</button>
+                <button id="number8" value="8" >8</button>
+                <button id="number9" value="9" >9</button>
+            </div>
+            <div>
+                <button id="number00" value="00" >00</button>
+                <button id="number0" value="0" >0</button>
+                <button id="numberdel" value="del" >del</button>
+            </div>
         </div>
     
 
+        <button type="submit" id="submitBtn">Start</button>
     </form>
-    <button>Start</button>
     <script src="countDown.js">
 
     </script>
