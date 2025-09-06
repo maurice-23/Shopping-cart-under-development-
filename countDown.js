@@ -29,3 +29,40 @@ function render(){
     document.getElementById('timer').innerHTML = `${timeArray[0]}${timeArray[1]}h ${timeArray[2]}${timeArray[3]}m ${timeArray[4]}${timeArray[5]}s`;
 }
 
+
+const form = document.getElementById('submitBtn');
+
+form.addEventListener("click", function(event){
+    let arrayHr =` ${timeArray[0]}${timeArray[1]}`;
+    let arrayMin =` ${timeArray[2]}${timeArray[3]}`;
+    let arraySec =` ${timeArray[4]}${timeArray[5]}`;
+    arrayHr = Number(arrayHr);
+    arrayMin = Number(arrayMin);
+    arraySec = Number(arraySec);
+    event.preventDefault();
+    let seconds = arraySec;
+    let minutes = arrayMin;
+    let hr = arrayHr;
+    
+    let timer = document.getElementById('timer');
+    function renderTime(){
+        timer.innerHTML = `${hr}h ${minutes}m ${seconds}s`;
+    }
+    setInterval(() => {
+        if (seconds <= 1) {
+            if (minutes === 0) {
+                if (hr === 0) {
+                    document.getElementById('timer').innerHTML = "Time is up";
+                }else{
+                    hr--;
+                    minutes = 10;
+                }
+            }else{
+                minutes--;
+                seconds = 9;
+            }
+        }
+        renderTime();
+        seconds --; 
+    }, 1000);
+})
