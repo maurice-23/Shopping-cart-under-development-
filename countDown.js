@@ -48,34 +48,25 @@ form.addEventListener("click", function(event){
     function renderTime(){
         timer.innerHTML = `${hr}h ${minutes}m ${seconds}s`;
     }
-    setInterval(() => {
+    let countDown = setInterval(() => {
         
-        if (seconds > 1) {
+        if (seconds > 0) {
             seconds --; 
         }else{
-            if (minutes >= 1) {
+            if (minutes > 0) {
                 minutes--;
-                seconds = 9;
-            }else{
-                if (hr >= 1) {
+                seconds = 59;
+            }else if (hr > 0) {
                     hr--;
-                    minutes = 9;
-                    seconds = 9;
+                    minutes = 59;
+                    seconds = 59;
+                }else{
+                    clearInterval(countDown);
+                    timer.innerHTML = "Time is up";
+                    return;
                 }
-            }
-        }
-            // if (minutes === 0) {
-            //     if (hr === 0) {
-            //         document.getElementById('timer').innerHTML = "Time is up";
-            //     }else{
-            //         hr--;
-            //         minutes = 10;
-            //     }
-            // }else{
-            //     minutes--;
-            //     seconds = 9;
-            // }
             
+        }
             renderTime();
         }, 1000);
 })
