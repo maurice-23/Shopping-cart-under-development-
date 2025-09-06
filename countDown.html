@@ -22,12 +22,22 @@
             height: 40px;
             margin: 3px 0;
         }
+        .two{
+            width: 128px;
+            display: flex;
+            justify-content: space-between;
+
+        }
+        
+        .two button{
+            width: 48%;
+        }
     </style>
 </head>
 <body>
     <form action="">
         <h1 id="timer">
-            <span id="hrs">00h</span>:<span id="mins">00m:</span><span id="secs">00s</span>
+            <span id="hrs">00h </span><span id="mins">00m </span><span id="secs">00s </span>
         </h1>
         <div class="keyBoard">
             <div>
@@ -45,9 +55,8 @@
                 <button value="8" >8</button>
                 <button value="9" >9</button>
             </div>
-            <div>
-                <button  value="00" >00</button>
-                <button  value="0" >0</button>
+            <div class="two">
+                <button  value="0" class="">0</button>
                 <button  value="del" >del</button>
             </div>
         </div>
