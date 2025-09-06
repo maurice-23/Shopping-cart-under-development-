@@ -49,20 +49,33 @@ form.addEventListener("click", function(event){
         timer.innerHTML = `${hr}h ${minutes}m ${seconds}s`;
     }
     setInterval(() => {
-        if (seconds <= 1) {
-            if (minutes === 0) {
-                if (hr === 0) {
-                    document.getElementById('timer').innerHTML = "Time is up";
-                }else{
-                    hr--;
-                    minutes = 10;
-                }
-            }else{
+        
+        if (seconds > 1) {
+            seconds --; 
+        }else{
+            if (minutes >= 1) {
                 minutes--;
                 seconds = 9;
+            }else{
+                if (hr >= 1) {
+                    hr--;
+                    minutes = 9;
+                    seconds = 9;
+                }
             }
         }
-        renderTime();
-        seconds --; 
-    }, 1000);
+            // if (minutes === 0) {
+            //     if (hr === 0) {
+            //         document.getElementById('timer').innerHTML = "Time is up";
+            //     }else{
+            //         hr--;
+            //         minutes = 10;
+            //     }
+            // }else{
+            //     minutes--;
+            //     seconds = 9;
+            // }
+            
+            renderTime();
+        }, 1000);
 })
