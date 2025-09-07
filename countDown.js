@@ -1,6 +1,7 @@
 
+//Declare time array
 let timeArray = [0,0,0,0,0,0];
-
+//Select all buttons
 const keyButton = document.querySelectorAll('.keyBoard button');
 
 keyButton.forEach(button => {
@@ -11,10 +12,12 @@ keyButton.forEach(button => {
             timeArray.unshift(0);
             render();
         }else if (timeArray[0]==0) {
+            //If the first element is 0, replace it with the button value
             move(this.value);
         }
     })
 })
+//Function to move the array elements to the left and add new value at the end
 function move(a) {
     let oldArray = [...timeArray];
     oldArray.forEach((value,i) => {
@@ -25,13 +28,14 @@ function move(a) {
     timeArray[timeArray.length - 1] = a;
     render();
 }
+//Function to render the time
 function render(){
     document.getElementById('timer').innerHTML = `${timeArray[0]}${timeArray[1]}h ${timeArray[2]}${timeArray[3]}m ${timeArray[4]}${timeArray[5]}s`;
 }
 
-
+//Initial render
 const form = document.getElementById('submitBtn');
-
+//Event listener for the start button
 form.addEventListener("click", function(event){
     let arrayHr =` ${timeArray[0]}${timeArray[1]}`;
     let arrayMin =` ${timeArray[2]}${timeArray[3]}`;
@@ -43,6 +47,7 @@ form.addEventListener("click", function(event){
     let seconds = arraySec;
     let minutes = arrayMin;
     let hr = arrayHr;
+    //Convert excess seconds and minutes to minutes and hours respectively
     if (seconds >= 60) {
         minutes ++;
         seconds = seconds%60;
@@ -51,11 +56,12 @@ form.addEventListener("click", function(event){
         hr ++;
         minutes = minutes%60;
     }
-    
+    //Start the countdown
     let timer = document.getElementById('timer');
     function renderTime(){
         timer.innerHTML = `${hr}h ${minutes}m ${seconds}s`;
     }
+    //Initial render of the time
     let countDown = setInterval(() => {
         
         if (seconds > 0) {
@@ -75,6 +81,7 @@ form.addEventListener("click", function(event){
                 }
             
         }
+            //Render the time after every second
             renderTime();
         }, 1000);
 })

@@ -6,114 +6,114 @@
     <title>Counter</title>
     <style>
         /* ===== General Reset ===== */
-/* ===== General Reset ===== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+        /* ===== General Reset ===== */
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        }
 
-body {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  font-family: "Poppins", sans-serif;
-}
+        body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        font-family: "Poppins", sans-serif;
+        }
 
-/* ===== Form Container ===== */
-form {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+        /* ===== Form Container ===== */
+        form {
+        background: rgba(255, 255, 255, 0.05);
+        padding: 2rem;
+        border-radius: 20px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        }
 
-/* ===== Timer ===== */
-#timer,.title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #38bdf8;
-  text-shadow: 0 0 12px #38bdf8, 0 0 24px #0ea5e9;
-  margin-bottom: 1.5rem;
-  letter-spacing: 2px;
-}
+        /* ===== Timer ===== */
+        #timer,.title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #38bdf8;
+        text-shadow: 0 0 12px #38bdf8, 0 0 24px #0ea5e9;
+        margin-bottom: 1.5rem;
+        letter-spacing: 2px;
+        }
 
-.title{
-    color: #38f872;
-    text-shadow: 0 0 12px #38f8b8, 0 0 24px #0ea5e9;
-    
-}
-/* ===== Keyboard Grid ===== */
-.keyBoard {
-  display: grid;
-  gap: 0.6rem;
-}
+        .title{
+            color: #38f872;
+            text-shadow: 0 0 12px #38f8b8, 0 0 24px #0ea5e9;
+            
+        }
+        /* ===== Keyboard Grid ===== */
+        .keyBoard {
+        display: grid;
+        gap: 0.6rem;
+        }
 
-.keyBoard > div {
-  display: flex;
-  gap: 0.6rem;
-  justify-content: center;
-}
+        .keyBoard > div {
+        display: flex;
+        gap: 0.6rem;
+        justify-content: center;
+        }
 
-/* ===== Buttons ===== */
-.keyBoard button {
-  width: 70px;
-  height: 70px;
-  border: none;
-  border-radius: 15px;
-  font-size: 1.4rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: #e2e8f0;
-  background: linear-gradient(145deg, #1e293b, #0f172a);
-  box-shadow: 4px 4px 10px #0b1120, -4px -4px 10px #27344a;
-  transition: all 0.15s ease-in-out;
-}
+        /* ===== Buttons ===== */
+        .keyBoard button {
+        width: 70px;
+        height: 70px;
+        border: none;
+        border-radius: 15px;
+        font-size: 1.4rem;
+        font-weight: bold;
+        cursor: pointer;
+        color: #e2e8f0;
+        background: linear-gradient(145deg, #1e293b, #0f172a);
+        box-shadow: 4px 4px 10px #0b1120, -4px -4px 10px #27344a;
+        transition: all 0.15s ease-in-out;
+        }
 
-.keyBoard button:hover {
-  background: linear-gradient(145deg, #0f172a, #1e293b);
-  box-shadow: inset 4px 4px 8px #0b1120, inset -4px -4px 8px #27344a;
-  transform: scale(0.95);
-}
+        .keyBoard button:hover {
+        background: linear-gradient(145deg, #0f172a, #1e293b);
+        box-shadow: inset 4px 4px 8px #0b1120, inset -4px -4px 8px #27344a;
+        transform: scale(0.95);
+        }
 
-/* Special style for delete button */
-.keyBoard button[value="del"] {
-  background: linear-gradient(145deg, #ef4444, #b91c1c);
-  color: white;
-  box-shadow: 4px 4px 12px rgba(239, 68, 68, 0.6);
-}
+        /* Special style for delete button */
+        .keyBoard button[value="del"] {
+        background: linear-gradient(145deg, #ef4444, #b91c1c);
+        color: white;
+        box-shadow: 4px 4px 12px rgba(239, 68, 68, 0.6);
+        }
 
-.keyBoard button[value="del"]:hover {
-  background: linear-gradient(145deg, #dc2626, #991b1b);
-  box-shadow: inset 4px 4px 8px rgba(239, 68, 68, 0.6);
-}
+        .keyBoard button[value="del"]:hover {
+        background: linear-gradient(145deg, #dc2626, #991b1b);
+        box-shadow: inset 4px 4px 8px rgba(239, 68, 68, 0.6);
+        }
 
-/* ===== Submit Button ===== */
-#submitBtn {
-  margin-top: 1.5rem;
-  padding: 0.8rem 2rem;
-  border: none;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  background: linear-gradient(90deg, #06b6d4, #3b82f6);
-  color: white;
-  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.5);
-  transition: all 0.2s ease-in-out;
-}
+        /* ===== Submit Button ===== */
+        #submitBtn {
+        margin-top: 1.5rem;
+        padding: 0.8rem 2rem;
+        border: none;
+        border-radius: 12px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        background: linear-gradient(90deg, #06b6d4, #3b82f6);
+        color: white;
+        box-shadow: 0 6px 18px rgba(59, 130, 246, 0.5);
+        transition: all 0.2s ease-in-out;
+        }
 
-#submitBtn:hover {
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
-  transform: translateY(-2px);
-}
+        #submitBtn:hover {
+        background: linear-gradient(90deg, #3b82f6, #06b6d4);
+        transform: translateY(-2px);
+        }
 
     </style>
 </head>
@@ -147,12 +147,8 @@ form {
                 <button  value="del" >del</button>
             </div>
         </div>
-    
-
         <button type="submit" id="submitBtn">Start</button>
     </form>
-    <script src="countDown.js">
-
-    </script>
+    <script src="countDown.js"> </script>
 </body>
 </html>
