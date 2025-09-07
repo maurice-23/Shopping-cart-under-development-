@@ -43,6 +43,14 @@ form.addEventListener("click", function(event){
     let seconds = arraySec;
     let minutes = arrayMin;
     let hr = arrayHr;
+    if (seconds >= 60) {
+        minutes ++;
+        seconds = seconds%60;
+    }
+    if (minutes >= 60) {
+        hr ++;
+        minutes = minutes%60;
+    }
     
     let timer = document.getElementById('timer');
     function renderTime(){
