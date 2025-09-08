@@ -29,6 +29,21 @@ const interval2 = setInterval(hellArrow = () => {
     clearInterval(interval2);
 },3000)
 
+// Using .map() used to copy array elements and modify it if you want \
+
+let numbers = [2,3,4,5];
+let numberSquared = numbers.map((num) => Math.pow(num,2));
+let numberCube = numbers.map((numb) => Math.pow(numb,3));
+let filterEven = numbers.filter((num) => {
+    return num % 2 === 0;
+})
+let accoumlator = numbers.reduce((accum,element) => accum + element);
+console.log(numbers);
+console.log(numberSquared);
+console.log(numberCube);
+console.log(filterEven);
+console.log(accoumlator);
+
 
 
 
