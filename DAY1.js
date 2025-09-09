@@ -18,34 +18,45 @@ exampleArrow("Maurice",30)
 // function inside set interval
 
 const interval1 = setInterval(function helloThere(){
-    console.log("Hello after 2 sec");
+    // console.log("Hello after 2 sec");
     clearInterval(interval1);
 },2000)
 
 //Change it into arrow function
 
 const interval2 = setInterval(hellArrow = () => {
-    console.log('Hello everyone in arrow after 3 sec')
+    // console.log('Hello everyone in arrow after 3 sec')
     clearInterval(interval2);
 },3000)
 
 // Using .map() used to copy array elements and modify it if you want \
 
-let numbers = [2,3,4,5];
-let numberSquared = numbers.map((num) => Math.pow(num,2));
-let numberCube = numbers.map((numb) => Math.pow(numb,3));
-let filterEven = numbers.filter((num) => {
-    return num % 2 === 0;
-})
-let accoumlator = numbers.reduce((accum,element) => accum + element);
-console.log(numbers);
-console.log(numberSquared);
-console.log(numberCube);
-console.log(filterEven);
-console.log(accoumlator);
+// let numbers = [2,3,4,5];
+// let numberSquared = numbers.map((num) => Math.pow(num,2));
+// let numberCube = numbers.map((numb) => Math.pow(numb,3));
+// let filterEven = numbers.filter((num) => {
+//     return num % 2 === 0;
+// })
+// let accoumlator = numbers.reduce((accum,element) => accum + element);
+// console.log(numbers);
+// console.log(numberSquared);
+// console.log(numberCube);
+// console.log(filterEven);
+// console.log(accoumlator);
 
+//Spread operator
 
+let number = [1,2,3,4];
+//find min
+let min = Math.min(number); //this gives error NaN (not a number)
+// real code
+min = Math.max(...number); //best way
+console.log(min);
 
+let myName = ['Maurice'];
+//spread
+let spreadName = [...myName];
+console.log(spreadName);
 
 
 
