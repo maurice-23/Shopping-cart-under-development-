@@ -15,3 +15,9 @@ let filteredArr = firstArray.filter((a) => {
     return a % 2 == 0;
 })
 console.log(filteredArr);
+
+let someArr = firstArray.some((b) => {
+    return b > 0;
+})
+
+console.log(someArr);
