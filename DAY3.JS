@@ -8,3 +8,10 @@ let arraySquare = firstArray.map((num) => {
 });
 
 console.log(arraySquare);
+
+// Filter function // ex filter Even num
+
+let filteredArr = firstArray.filter((a) => {
+    return a % 2 == 0;
+})
+console.log(filteredArr);
