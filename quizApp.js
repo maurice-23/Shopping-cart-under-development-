@@ -7,6 +7,7 @@ let questionBlock = document.getElementById('question');
 let optionBlock = document.getElementById('option');
 let quizForm = document.getElementById('quizForm');
 let startQuizBtn = document.getElementById("startQuiz");
+let correctAnswer = 0;
 startQuizBtn.addEventListener("click", function (event){
     event.preventDefault();
     questionNumber ++;
@@ -15,25 +16,38 @@ startQuizBtn.addEventListener("click", function (event){
     renderOption();
 })
 
-
 function renderOption(){
     questionObj.qNumber.answer.forEach((ans) =>{
-        optionBlock.innerHTML += `<button onclick="checkMe(${ans})">${ans}</button>`
+        let customid = 1;
+        optionBlock.innerHTML += `<button id='mybutton${ans}' onclick="checkMe(${ans})">${ans}</button>`
+        tmpId = 'mybutton';
     })
-    optionBlock.innerHTML += `<button>Next</button>`;
+    optionBlock.innerHTML += `<button id='next'>Next</button>`;
+    
 }
+
+
 function checkMe(a){
+
     optionBlock.innerHTML = ' ';
+    renderOption();
+
+    
+    let mybutton = document.getElementById(`mybutton${a}`);
     if (a === questionObj.qNumber.correct) {
-        console.log('Correct answer');
+        console.log("Correct answer")
+        mybutton.style.backgroundColor = 'green';
+        mybutton.style.color = 'white';
+        disableButton();
     }else{
         console.log('wrong answer');
+        disableButton();
     }
-    renderOption();
+    
 }
-// quizForm.addEventListener("submit", function(event) {
-//     event.preventDefault();
-//     function checkMe(a=0){
-        
-//     }
-// })
+
+function disableButton(){
+   let buttons = document.getElementById('option').querySelector('button');
+    buttons.disabled = true;
+
+}
