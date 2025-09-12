@@ -1,6 +1,6 @@
 let questionObj = {
   qNumber: { question: "2+2", answer: [3, 4, 5, 2], correct: 4 },
-  qNumber1: { question: "2+3", answer: [3, 4, 5, 2], correct: 4 }
+  qNumber1: { question: "2+3", answer: [5, 1, 0, 2], correct: 5 }
 };
 
 
@@ -35,6 +35,9 @@ function renderOption() {
     const checcc = objectOg[1];
     const anotherC = Object.values(checcc);
     questionBlock.innerHTML = `${questionNumber}. ${objectOg[1].question}`;
+    objectOg[1].answer.forEach((ans) => {
+    optionBlock.innerHTML += `<button id='mybutton${ans}' onclick="checkMe(${ans})">${ans}</button>`;
+  });
   });
 }
 
