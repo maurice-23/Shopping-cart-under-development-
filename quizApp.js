@@ -32,22 +32,26 @@ function checkMe(a) {
 
   let mybutton = document.getElementById(`mybutton${a}`);
   if (a === questionObj.qNumber.correct) {
-    console.log("Correct answer");
+    // alert("Correct answer");
     mybutton.style.backgroundColor = "green";
-    mybutton.style.color = "white";
+    // mybutton.style.color = "";
     disableButtons();
-} else {
-    mybutton.style.backgroundColor = "red";
-    mybutton.style.color = "white";
-    console.log("wrong answer");
-    disableButtons();
-  }
+  } else {
+      mybutton.style.backgroundColor = "crimson";
+      mybutton.style.color = "white";
+      // alert("wrong answer");
+      disableButtons();
+    }
 }
 
 function disableButtons() {
   for (let i = 0; i < questionObj.qNumber.answer.length; i++) {
     let itera = questionObj.qNumber.answer[i];
     let button = document.getElementById(`mybutton${itera}`);
+    if (questionObj.qNumber.answer[i] == questionObj.qNumber.correct) {
+      document.getElementById(`mybutton${itera}`).style.backgroundColor = 'lightgreen';
+      document.getElementById(`mybutton${itera}`).style.color = 'black';
+    }
     button.disabled = true;
   }
 }
