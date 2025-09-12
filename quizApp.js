@@ -1,6 +1,9 @@
 let questionObj = {
   qNumber: { question: "2+2", answer: [3, 4, 5, 2], correct: 4 },
+  qNumber1: { question: "2+3", answer: [3, 4, 5, 2], correct: 4 }
 };
+
+
 //Dom manipulation
 let questionNumber = 0;
 let questionBlock = document.getElementById("question");
@@ -10,19 +13,29 @@ let startQuizBtn = document.getElementById("startQuiz");
 let correctAnswer = 0;
 startQuizBtn.addEventListener("click", function (event) {
   event.preventDefault();
+  performTask()
+});
+function performTask(){
   questionNumber++;
   questionBlock.innerHTML = `${questionNumber}. ${questionObj.qNumber.question}`;
-
+  startQuizBtn.style.display = 'none'
   renderOption();
-});
+}
 
 function renderOption() {
   questionObj.qNumber.answer.forEach((ans) => {
-    let customid = 1;
     optionBlock.innerHTML += `<button id='mybutton${ans}' onclick="checkMe(${ans})">${ans}</button>`;
-    tmpId = "mybutton";
   });
   optionBlock.innerHTML += `<button id='next'>Next</button>`;
+  document.getElementById('next').addEventListener('click', function (event){
+  event.preventDefault();
+    questionNumber ++;
+    let nextQuestionIndex = questionNumber - 2;
+    const objectOg = Object.values(questionObj);
+    const checcc = objectOg[1];
+    const anotherC = Object.values(checcc);
+    questionBlock.innerHTML = `${questionNumber}. ${objectOg[1].question}`;
+  });
 }
 
 function checkMe(a) {
@@ -32,14 +45,11 @@ function checkMe(a) {
 
   let mybutton = document.getElementById(`mybutton${a}`);
   if (a === questionObj.qNumber.correct) {
-    // alert("Correct answer");
-    mybutton.style.backgroundColor = "green";
-    // mybutton.style.color = "";
+    correctAnswer++;
     disableButtons();
   } else {
       mybutton.style.backgroundColor = "crimson";
       mybutton.style.color = "white";
-      // alert("wrong answer");
       disableButtons();
     }
 }
@@ -55,3 +65,5 @@ function disableButtons() {
     button.disabled = true;
   }
 }
+
+
