@@ -36,8 +36,9 @@ function renderOption() {
     const anotherC = Object.values(checcc);
     questionBlock.innerHTML = `${questionNumber}. ${objectOg[1].question}`;
     objectOg[1].answer.forEach((ans) => {
-    optionBlock.innerHTML += `<button id='mybutton${ans}' onclick="checkMe(${ans})">${ans}</button>`;
-  });
+      optionBlock.innerHTML += `<button id='mybutton${ans}' onclick="checkMe(${ans})">${ans}</button>`;
+
+    });
   });
 }
 
@@ -51,10 +52,10 @@ function checkMe(a) {
     correctAnswer++;
     disableButtons();
   } else {
-      mybutton.style.backgroundColor = "crimson";
-      mybutton.style.color = "white";
-      disableButtons();
-    }
+    mybutton.style.backgroundColor = "crimson";
+    mybutton.style.color = "white";
+    disableButtons();
+  }
 }
 
 function disableButtons() {
