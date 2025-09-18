@@ -17,15 +17,14 @@ startQuizBtn.addEventListener("click", function (event) {
   event.preventDefault();
   questionNumber++;
   questionBlock.innerHTML = `${questionNumber}. ${checcc.question}`;
-//   startQuizBtn.style.display = 'none';
-    renderOption();
+  renderOption();
 });
 
 function renderOption() {
     checcc.answer.forEach((ans) => {
     optionBlock.innerHTML += `<button id='mybutton${ans}' onclick="checkMe(${ans})">${ans}</button>`;
   });
-//   optionBlock.innerHTML += `<button id='startQuiz'>Next</button>`;
+  optionBlock.innerHTML += `<button>Next</button>`;
   nextquetion++;
 }
 
@@ -56,6 +55,3 @@ function disableButtons() {
     button.disabled = true;
   }
 }
-
-    
-    
