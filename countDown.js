@@ -1,5 +1,4 @@
 
-//Declare time array
 let timeArray = [0,0,0,0,0,0];
 //Select all buttons
 const keyButton = document.querySelectorAll('.keyBoard button');
