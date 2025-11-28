@@ -1,8 +1,5 @@
-
 let timeArray = [0,0,0,0,0,0];
-//Select all buttons
 const keyButton = document.querySelectorAll('.keyBoard button');
-
 keyButton.forEach(button => {
     button.addEventListener('click', function(event){
         event.preventDefault();
